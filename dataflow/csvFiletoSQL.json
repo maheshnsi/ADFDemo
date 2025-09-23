@@ -1,0 +1,34 @@
+{
+	"name": "csvFiletoSQL",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "SourceCSVFile"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          StudentID as string,",
+				"          FirstName as string,",
+				"          LastName as string,",
+				"          Age as string,",
+				"          Gender as string,",
+				"          Class as string,",
+				"          Marks as string,",
+				"          Email as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> SourceCSVFile"
+			]
+		}
+	}
+}
