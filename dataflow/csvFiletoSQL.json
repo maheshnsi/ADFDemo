@@ -12,7 +12,15 @@
 					"name": "SourceCSVFile"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_sql_output",
+						"type": "DatasetReference"
+					},
+					"name": "SinkSQL"
+				}
+			],
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
@@ -27,7 +35,26 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> SourceCSVFile"
+				"     ignoreNoFilesFound: false) ~> SourceCSVFile",
+				"SourceCSVFile sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          StudentID as integer,",
+				"          FristName as string,",
+				"          LastName as string,",
+				"          Age as integer,",
+				"          Gender as string,",
+				"          Class as string,",
+				"          Marks as integer,",
+				"          Email as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SinkSQL"
 			]
 		}
 	}
