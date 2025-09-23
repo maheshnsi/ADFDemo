@@ -1,0 +1,9 @@
+{
+	"name": "adf-demo-project-dev",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "612126c1-267e-4a76-a31a-beaa43d342d2",
+		"tenantId": "9f01172d-e41f-4d50-ba73-2b9dd71f5364"
+	}
+}
