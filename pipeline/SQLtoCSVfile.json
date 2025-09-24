@@ -61,7 +61,7 @@
 					{
 						"activity": "CopyStudentData",
 						"dependencyConditions": [
-							"Failed"
+							"Succeeded"
 						]
 					}
 				],
