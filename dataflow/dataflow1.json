@@ -1,0 +1,39 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Avro_eventhub",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "parse1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          SequenceNumber as long,",
+				"          Offset as string,",
+				"          EnqueuedTimeUtc as string,",
+				"          SystemProperties as [string,string],",
+				"          Properties as [string,string],",
+				"          Body as (Body as string)",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 parse(Body = ERROR_FUNCTION(''),",
+				"     format: 'json',",
+				"     documentForm: 'documentPerLine') ~> parse1"
+			]
+		}
+	}
+}
