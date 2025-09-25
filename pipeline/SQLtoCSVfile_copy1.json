@@ -3,37 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Web1",
-				"type": "WebActivity",
-				"dependsOn": [
-					{
-						"activity": "Data flow1",
-						"dependencyConditions": [
-							"Failed"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"method": "POST",
-					"headers": {
-						"content-type": "application/json"
-					},
-					"url": "https://prod-08.northcentralus.logic.azure.com:443/workflows/16bb035a6f104941a1f93c1816c0443d/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=AlkBfWOU54o1oSpozw3hrYBzVeNDvGSiYczK5ht0yes",
-					"body": {
-						"value": "{\n    \"Pipeline\":\"@{pipeline().Pipeline}\",\n    \"ErrorMessage\":\"@{activity('CopyStudentData').Error.Message}\",\n    \"DataFactoryName\":\"@{pipeline().DataFactory}\"\n}",
-						"type": "Expression"
-					}
-				}
-			},
-			{
 				"name": "Data flow1",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
