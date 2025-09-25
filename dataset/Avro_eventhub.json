@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"container": {
-					"value": "@{\n    concat('demo-project-adf/eh-ns-adf-project-demo/eh-adf-demo',pipeline().parameters.PartitionId,'/',formatDateTime(utcNow(),'yyyy/MM/dd/HH'))\n}",
+					"value": "@{\n    concat('demo-project-adf/eh-ns-adf-project-demo/eh-adf-demo','0','/',formatDateTime(utcNow(),'yyyy/MM/dd/HH'))\n}",
 					"type": "Expression"
 				}
 			}
