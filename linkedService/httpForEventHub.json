@@ -1,0 +1,12 @@
+{
+	"name": "httpForEventHub",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://eh-ns-adf-project-demo.servicebus.windows.net/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
