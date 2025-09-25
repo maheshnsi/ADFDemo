@@ -10,8 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "57.avro",
-				"folderPath": "eh-ns-adf-project-demo/eh-adf-demo/0/2025/09/25/13/27",
+				"fileName": {
+					"value": "{PartitionId}/YYYY/MM/DD/HH/mm/{file}.avro",
+					"type": "Expression"
+				},
+				"folderPath": "eh-ns-adf-project-demo/eh-adf-demo",
 				"container": "demo-project-adf"
 			}
 		},
