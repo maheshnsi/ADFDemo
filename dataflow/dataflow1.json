@@ -33,7 +33,7 @@
 				"          EnqueuedTimeUtc as string,",
 				"          SystemProperties as [string,string],",
 				"          Properties as [string,string],",
-				"          Body as (Body as string)",
+				"          Body as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
