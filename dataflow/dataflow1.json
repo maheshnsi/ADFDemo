@@ -38,7 +38,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 parse(Body = ERROR_FUNCTION(''),",
+				"source1 parse(Body = ERROR_FUNCTION('') ? string,",
 				"     format: 'json',",
 				"     documentForm: 'documentPerLine') ~> parse1",
 				"parse1 sink(allowSchemaDrift: true,",
