@@ -1,0 +1,69 @@
+{
+	"name": "Avro_eventhub",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blob_stdemoprojectadfdev",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "57.avro",
+				"folderPath": "eh-ns-adf-project-demo/eh-adf-demo/0/2025/09/25/13/27",
+				"container": "demo-project-adf"
+			}
+		},
+		"schema": {
+			"type": "record",
+			"name": "Microsoft.ServiceBus.Messaging.EventData",
+			"fields": [
+				{
+					"name": "SequenceNumber",
+					"type": "long"
+				},
+				{
+					"name": "Offset",
+					"type": "string"
+				},
+				{
+					"name": "EnqueuedTimeUtc",
+					"type": "string"
+				},
+				{
+					"name": "SystemProperties",
+					"type": {
+						"type": "map",
+						"values": [
+							"long",
+							"double",
+							"string",
+							"bytes"
+						]
+					}
+				},
+				{
+					"name": "Properties",
+					"type": {
+						"type": "map",
+						"values": [
+							"long",
+							"double",
+							"string",
+							"bytes",
+							"null"
+						]
+					}
+				},
+				{
+					"name": "Body",
+					"type": [
+						"null",
+						"bytes"
+					]
+				}
+			]
+		}
+	}
+}
