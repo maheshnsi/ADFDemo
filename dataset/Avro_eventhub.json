@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "eh-ns-adf-project-demo",
 				"container": {
 					"value": "@{\n    concat('demo-project-adf/eh-ns-adf-project-demo/eh-adf-demo',pipeline().parameters.PartitionId,'/',formatDateTime(utcNow(),'yyyy/MM/dd/HH'))\n}",
 					"type": "Expression"
